@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+CMLootOut/
+sccmfiles*.txt
+sccmhosts.txt
+_wim_extract/
+*.pfx
+cert_*.pfx
+*.egg
