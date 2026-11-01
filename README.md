@@ -23,6 +23,24 @@ including OSD boot images for ELEVATE-5 Distribution Point takeover.
 
 ---
 
+## What's new vs. the original
+
+A feature-extended fork of [shelltrail/cmloot](https://github.com/shelltrail/cmloot)
+(Andreas Vikerup / Shelltrail), which enumerates and downloads files from
+`SCCMContentLib$` with pass-the-hash, multi-target inventory and NTLM relaying.
+This fork keeps all of that and adds:
+
+- **LDAP discovery** of SCCM Management Points (`mSSMSManagementPoint`), not just a static host list
+- **Interactive download** — a prioritized table (size, category, high-value `[!]` markers); pick files or ranges
+- **`-auto` pipeline** — discover, inventory, download and classify in one command
+- **Local classification** (`-classify`) — categorizes downloaded loot offline, no target needed
+- **ELEVATE-5** (`-elevate5`) — extracts `Variables.dat` and PKI client-auth certificates from OSD boot images
+- **Credential analysis** — a separate `cmloot_analyze.py` with CRITICAL/HIGH/MEDIUM severities and JSON output
+- **More auth** — Kerberos (`-k`, `-aesKey`) alongside the original pass-the-hash
+- **Progress & ETA** on inventory, plus interactive and `-yes-download` modes
+
+The full list is below.
+
 ## Features
 
 - **BFS Inventory** — traversal with progress bars, ETA, file counts
